@@ -3,3 +3,4 @@ opencv-python
 scikit-learn
 numpy
 uvicorn[standard]
+fastapi
