@@ -1,0 +1,4 @@
+ultralytics==8.1.38
+opencv-python
+scikit-learn
+numpy
