@@ -8,12 +8,16 @@ import shutil
 import os
 import cv2
 import numpy as np
+import torch
 
 app = FastAPI()
 app.add_middleware(CORSMiddleware, allow_origins=["*"])
 
 # Mount static directory for result images
 app.mount("/static", StaticFiles(directory="static"), name="static")
+
+torch.serialization.add_safe_globals([YOLO])
+
 
 # Load the trained YOLOv8 model
 model = YOLO("best.pt")  # Replace with your path if needed
